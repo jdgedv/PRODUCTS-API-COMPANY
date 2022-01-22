@@ -1,0 +1,80 @@
+###
+GET http://localhost:3000/api/products
+
+###
+POST http://localhost:3000/api/products
+content-type: application/json
+
+{
+    "name": "HP VAIO",
+    "category": "Computers and Laptops",
+    "price": "499.99",
+    "imgURL": "pruebaURL 3"
+}
+###
+GET http://localhost:3000/api/products/61e094b3723cf0a3df40b849
+
+###
+DELETE http://localhost:3000/api/products/61e04a9b3a54bcdb211bd427
+
+###
+PUT http://localhost:3000/api/products/61e04a9b3a54bcdb211bd427
+content-type: application/json
+
+{
+    "name": "Laptop ASUS",
+    "category": "Computers and Laptops",
+    "price": "299.99",
+    "imgURL": "Imagen prueba"
+}
+
+###
+POST http://localhost:3000/api/auth/signin
+content-type: application/json
+
+{
+
+}
+
+
+###
+POST  http://localhost:3000/api/auth/signup
+content-type: application/json
+
+{
+    "username": "Jose" ,
+    "email": "jose@gmail.com",
+    "password": "jos123",
+    "roles": ["admin"]
+}
+
+###
+POST  http://localhost:3000/api/auth/signin
+content-type: application/json
+
+{
+    "email": "jose@gmail.com",
+    "password": "jos123"
+}
+
+###
+POST  http://localhost:3000/api/auth/signin
+content-type: application/json
+
+{
+    "email": "cristiangalviscardona@gmail.com",
+    "password": "David123"
+}
+
+
+//la siguiente request no funca pero por temas de la extension, desde postman funca normalmente, aqui de todos modos se puede verificar la logica.
+###
+POST http://localhost:3000/api/products
+content-type: application/json
+x-access-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWI0ZDE1OTAzZjY3MTc2NDQwZTVmYyIsImlhdCI6MTY0MjgxNTgxOCwiZXhwIjoxNjQyOTAyMjE4fQ.Lw_pznwY6i_Uak8mkWyNgSJXXRjTMQgQtsfZuOA7qHk"
+{
+    "name": "HP VAIO",
+    "category": "Computers and Laptops",
+    "price": "499.99",
+    "imgURL": "pruebaURL 3"
+}
